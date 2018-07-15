@@ -16,7 +16,7 @@ then
     echo "Enter your username:"
     read usr
 else
-    usr = $1
+    usr=$1
 fi
 #prompt for rig id or set from command line arguments
 if [ $# -lt 2 ]
@@ -24,7 +24,7 @@ then
     echo "Enter this rig ID:"
     read rig
 else
-    rig = $2  
+    rig=$2  
 fi
 
 #Install the .NET Core SDK
