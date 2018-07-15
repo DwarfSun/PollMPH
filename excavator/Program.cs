@@ -4,9 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using MPH_Poll;
 
-namespace mph_switcher
+namespace excavator
 {
   public class Miner
   {

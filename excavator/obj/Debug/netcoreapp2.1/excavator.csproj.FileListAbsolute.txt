@@ -1,11 +1,11 @@
-/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.csprojAssemblyReference.cache
-/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.csproj.CoreCompileInputs.cache
-/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.AssemblyInfoInputs.cache
-/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.AssemblyInfo.cs
 /home/dwarf/Projects/excavator/excavator/bin/Debug/netcoreapp2.1/excavator.deps.json
 /home/dwarf/Projects/excavator/excavator/bin/Debug/netcoreapp2.1/excavator.runtimeconfig.json
 /home/dwarf/Projects/excavator/excavator/bin/Debug/netcoreapp2.1/excavator.runtimeconfig.dev.json
 /home/dwarf/Projects/excavator/excavator/bin/Debug/netcoreapp2.1/excavator.dll
 /home/dwarf/Projects/excavator/excavator/bin/Debug/netcoreapp2.1/excavator.pdb
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.csprojAssemblyReference.cache
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.csproj.CoreCompileInputs.cache
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.AssemblyInfoInputs.cache
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.AssemblyInfo.cs
 /home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.dll
 /home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.pdb

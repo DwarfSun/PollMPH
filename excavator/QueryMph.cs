@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPH_Poll
+namespace excavator
 {
   public class QueryMph
   {
