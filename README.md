@@ -1,1 +1,1 @@
-# DwarfSun's Excavator for Mining Pool Hub
+# DwarfSun's Spelunker for Mining Pool Hub
