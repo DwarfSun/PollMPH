@@ -8,7 +8,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("spelunker")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Helper program for managing several 3rd party crypto miner apps mining multiple c" +
 "urrencies")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

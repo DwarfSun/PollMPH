@@ -6,9 +6,6 @@
     <Description>Helper program for managing several 3rd party crypto miner apps mining multiple currencies</Description>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug</OutputPath>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType></DebugType>
     <OutputPath>bin\Release</OutputPath>

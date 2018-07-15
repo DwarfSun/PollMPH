@@ -47,8 +47,9 @@ cd /spelunker/source
 
 #Get miners
 git clone https://github.com/DwarfSun/miners.git
+cd miners;git pull;cd ..;
 
-#Clone excavator files from GitHub
+#Clone spelunker files from GitHub
 git clone https://github.com/DwarfSun/spelunker.git
 cd spelunker;git pull;cd ..;
 
@@ -63,6 +64,22 @@ cd xmrig-nvidia; git pull; cd ..;
 #Clone xmrig source from GitHub
 git clone https://github.com/xmrig/xmrig.git
 cd xmrig; git pull; cd ..;
+
+#Build DwarfSun's spelunker
+cd /spelunker/source/spelunker
+dotnet publish
+mv /spelunker/source/spelunker/spelunker/bin/Release/netcoreapp2.1/publish/* /spelunker
+cd /spelunker
+touch spelunk.sh
+echo "#!/bin/bash" >> spelunk.sh
+echo "if [ $EUID -ne 0 ]" >> spelunk.sh
+echo "then" >> spelunk.sh
+echo "   echo 'spelunker must be run as root.'' 1>&2" >> spelunk.sh
+echo "   exit 1" >> spelunk.sh
+echo "fi" >> spelunk.sh
+echo "cd /spelunker" >> spelunk.sh
+echo "dotnet spelunker.dll" >> spelunk.sh
+chmod +x spelunk.sh
 
 #Build CCMiner
 mkdir -p /spelunker/source/ccminer
@@ -80,3 +97,64 @@ mkdir -p /spelunker/source/xmrig/build
 cd /spelunker/source/xmrig/build
 cmake ..
 make
+
+#Create directories for miner binaries
+mkdir -p /spelunker/ccminer
+mkdir -p /spelunker/xmrig-nvidia
+mkdir -p /spelunker/xmrig
+mkdir -p /spelunker/zm
+mkdir -p /spelunker/ethdcrminer
+mkdir -p /spelunker/ewbf
+
+#Move files
+#CCMiner
+mv /spelunker/source/ccminer/ccminer /spelunker/ccminer
+
+#xmrig
+mv /spelunker/source/xmrig/build/xmrig /spelunker/xmrig
+cp /spelunker/source/xmrig/src/config.json /spelunker/xmrig
+cd /spelunker/xmrig
+sed -i "s/proxy.fee.xmrig.com:9999/europe.cryptonight-hub.miningpoolhub.com:17024/g" config.json
+sed -i "s/YOUR_WALLET/DwarfSun.Donation/g" config.json
+sed -i 's/"threads": null/"threads": 1/g' config.json
+sed -i 's/"donate-level": 5/"donate-level": 1' config.json
+sed -i 's/"background": false/"background": true/g' config.json
+
+#xmrig-nvidia
+mv /spelunker/source/xmrig-nvidia/build/xmrig-nvidia /spelunker/xmrig-nvidia
+
+#DSTM's ZM
+cp /spelunker/source/miners/zm/* /spelunker/zm
+
+#Claymore's ETH Dual Miner
+cp /spelunker/source/miners/ethdcrminer/* /spelunker/ethdcrminer
+
+#EWBF's Equihash Miner
+cp /spelunker/source/miners/ewbf/* /spelunker/ewbf
+
+#start spelunking in screen session
+screen -dmS spelunker /spelunker/spelunk.sh
+
+echo "Would you like spelunker to start after a reboot? [y/n]"
+read answer
+if [ $answer == "y" ] || [ $answer == "Y" ]
+then
+    #add spelunk.sh to crontab
+    touch crontab.txt
+    crontab -l > crontab.txt
+
+    if grep -q "@reboot screen -dmS spelunker /spelunker/spelunk.sh" "./crontab.txt"
+    then
+        echo "crontab already configured for auto-mining." 1>&2
+    elif grep -q "@reboot" "./crontab.txt"
+    then
+        echo "Warning: crontab already contains a process which is launched on reboot. You will need to configure crontab manually." 1>&2
+        crontab -e
+    else
+        echo "@reboot screen -dmS spelunker /spelunker/spelunk.sh" >> crontab.txt
+        crontab crontab.txt
+    fi
+fi
+echo "Installation complete, launching screen session." 1>&2
+sleep 20
+screen -r spelunker

@@ -729,13 +729,13 @@
       "projectName": "spelunker",
       "projectPath": "/home/dwarf/Projects/spelunker/spelunker/spelunker.csproj",
       "packagesPath": "/home/dwarf/.nuget/packages/",
-      "outputPath": "/home/dwarf/Projects/spelunker/spelunker/obj",
+      "outputPath": "/home/dwarf/Projects/spelunker/spelunker/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/dwarf/.config/NuGet/NuGet.Config"
+        "/home/dwarf/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -758,14 +758,13 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.0",
+            "version": "[2.1.0, )",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "11.0.2"
+            "version": "[11.0.2, )"
           }
         },
         "imports": [
