@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #default values
-usr = "DwarfSun"
-rig = "Donation"
+usr="DwarfSun"
+rig="Donation"
 
 #Make sure script is run as root
 if [ $EUID -ne 0 ]
