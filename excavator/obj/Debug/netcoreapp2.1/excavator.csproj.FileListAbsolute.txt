@@ -1,0 +1,4 @@
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.csprojAssemblyReference.cache
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.csproj.CoreCompileInputs.cache
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.AssemblyInfoInputs.cache
+/home/dwarf/Projects/excavator/excavator/obj/Debug/netcoreapp2.1/excavator.AssemblyInfo.cs
