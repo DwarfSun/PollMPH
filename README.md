@@ -1,7 +1,7 @@
 # DwarfSun's Spelunker for Mining Pool Hub
 Spelunker is a mining helper program, written for Ubuntu Linux using .NET Core 2.1, for mining multiple algorithms from miningpoolhub.com
 
-Spelunker does not mine coins. It downloads and manages a number of miner programs, using the normalized profit data it retrievs from mining pool hub's REST API. Miner's are configured per algorithm in a single JSON file, making it relatively easy to add or remove miners and algorithms according to your own preference. It's bundled with an install script, which will attempt to download all necessary dependencies, compile itself and the miners, as well as update the crontab so that it launches at reboot (after prompting the user). 
+Spelunker does not mine coins. It downloads and manages a number of miner programs, using the normalized profit data it retrieves from mining pool hub's REST API. Miner's are configured per algorithm in a single JSON file, making it relatively easy to add or remove miners and algorithms according to your own preference. It's bundled with an install script, which will attempt to download all necessary dependencies, compile itself and the miners, as well as update the crontab so that it launches at reboot (after prompting the user). 
 
 Where possible, Spelunker has made use of open source miners, noteably xmrig-nvidia and ccminer, found at https://github.com/xmrig/xmrig-nvidia and https://github.com/tpruvot/ccminer respectively. It additionally makes use of Claymore's Eth miner, DSTM's zm Equihash miner and EWBF's Equihash miner (for mining Bitcoin-Gold).
 
