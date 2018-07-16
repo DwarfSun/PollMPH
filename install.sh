@@ -71,14 +71,14 @@ dotnet publish
 mv /spelunker/source/spelunker/spelunker/bin/Release/netcoreapp2.1/publish/* /spelunker
 cd /spelunker
 touch spelunk.sh
-echo "#!/bin/bash" >> spelunk.sh
-echo "if [ $EUID -ne 0 ]" >> spelunk.sh
-echo "then" >> spelunk.sh
-echo "   echo 'spelunker must be run as root.'' 1>&2" >> spelunk.sh
-echo "   exit 1" >> spelunk.sh
-echo "fi" >> spelunk.sh
-echo "cd /spelunker" >> spelunk.sh
-echo "dotnet spelunker.dll" >> spelunk.sh
+echo '#!/bin/bash' >> spelunk.sh
+echo 'if [ $EUID -ne 0 ]' >> spelunk.sh
+echo 'then' >> spelunk.sh
+echo '   echo "spelunker must be run as root." 1>&2' >> spelunk.sh
+echo '   exit 1' >> spelunk.sh
+echo 'fi' >> spelunk.sh
+echo 'cd /spelunker' >> spelunk.sh
+echo 'dotnet spelunker.dll' >> spelunk.sh
 chmod +x spelunk.sh
 
 #Build CCMiner
@@ -95,7 +95,7 @@ make
 #Build xmrig
 mkdir -p /spelunker/source/xmrig/build
 cd /spelunker/source/xmrig/build
-cmake ..
+cmake .. -DCMAKE_C_COMPILER=gcc-5 -DCMAKE_CXX_COMPILER=g++-5
 make
 
 #Create directories for miner binaries
@@ -133,7 +133,8 @@ cp /spelunker/source/miners/ethdcrminer/* /spelunker/ethdcrminer
 cp /spelunker/source/miners/ewbf/* /spelunker/ewbf
 
 #start spelunking in screen session
-screen -dmS spelunker /spelunker/spelunk.sh
+cd /spelunker
+screen -dmS spelunker ./spelunk.sh
 
 echo "Would you like spelunker to start after a reboot? [y/n]"
 read answer

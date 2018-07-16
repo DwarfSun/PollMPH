@@ -135,7 +135,7 @@ namespace spelunker
 
   class Program
   {
-    private static Config config;// = new Config();
+    private static Config config;
     private static CoinStats topCoin = new CoinStats();
     private static List<CoinStats> coins = new List<CoinStats>();
     
