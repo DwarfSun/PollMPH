@@ -42,7 +42,8 @@ namespace spelunker
       miners.Add(new Miner{
         algorithm = "Equihash-BTG",
         filename = "/spelunker/ewbf/miner",
-        arguments = @"--server {0} --port {1} --user {2}.{3} --pass x  --algo 144_5 --pers BgoldPoW --fee 1 --eexit 3 --api 0.0.0.0:2222"
+        //MPH does not currently report the correct server url for BTG
+        arguments = @"--server europe.equihash-hub.miningpoolhub.com --port {1} --user {2}.{3} --pass x  --algo 144_5 --pers BgoldPoW --fee 1 --eexit 3 --api 0.0.0.0:2222"
       });
       miners.Add(new Miner{
         algorithm = "Ethash",
