@@ -2,3 +2,12 @@
 /.vscode
 /bin
 /obj
+spelunker/obj/Debug/netcoreapp2.1/spelunker.csprojResolveAssemblyReference.cache
+spelunker/obj/project.assets.json
+spelunker/obj/spelunker.csproj.nuget.cache
+spelunker/obj/spelunker.csproj.nuget.g.props
+spelunker/obj/spelunker.csproj.nuget.g.targets
+spelunker/obj/Debug/netcoreapp2.1/spelunker.AssemblyInfo.cs
+spelunker/obj/Debug/netcoreapp2.1/spelunker.AssemblyInfoInputs.cache
+spelunker/obj/Debug/netcoreapp2.1/spelunker.assets.cache
+spelunker/obj/Debug/netcoreapp2.1/spelunker.csproj.CoreCompileInputs.cache
