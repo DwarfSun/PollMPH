@@ -9,14 +9,14 @@ Where possible, Spelunker has made use of open source miners, noteably xmrig-nvi
 Spelunker comes with an install.sh file which, when executed, will attempt to download and install all dependencies. Simply running it should place all the miners in a folder named spelunker at /, as well as configure the miners to use the username and rig ID you specify.
 
 The following command, typed in terminal, should be all that is needed: <br />
-  sudo apt-get install git;git clone https://github.com/DwarfSun/Spelunker.git; cd spelunker;sudo ./install.sh
+<code>sudo apt-get install git;git clone https://github.com/DwarfSun/Spelunker.git; cd spelunker;sudo ./install.sh</code>
  
 # Launching Spelunker
 If launched by the crontab during a reboot, Spelunker can be viewed by typing the following in the terminal: <br />
- sudo screen -r spelunker
+<code>sudo screen -r spelunker</code>
   
 To launch Spelunker manually, simply type the following in the terminal: <br />
-  sudo /spelunker/spelunk.sh
+<code>sudo /spelunker/spelunk.sh</code>
   
 # Installing .NET Core 2.1 SDK
 This should not be necessary on Ubuntu, as it should have been done by the install script. However, if the installation failed or you're attempting to use Spelunker on a different distribution of linux, instructions to install can be found at https://www.microsoft.com/net/download/linux-package-manager/ubuntu18-04/sdk-current
