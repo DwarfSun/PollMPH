@@ -24,7 +24,7 @@ then
     echo "Enter this rig ID:"
     read rig
 else
-    rig=$2  
+    rig=$2
 fi
 
 #Install the .NET Core SDK
@@ -89,13 +89,13 @@ cd /spelunker/source/ccminer
 #Build xmr-stak
 mkdir -p /spelunker/source/xmrig-nvidia/build
 cd /spelunker/source/xmrig-nvidia/build
-cmake ..
+cmake .. -DCMAKE_C_COMPILER=gcc-5 -DCMAKE_CXX_COMPILER=g++-5
 make
 
 #Build xmrig
 mkdir -p /spelunker/source/xmrig/build
 cd /spelunker/source/xmrig/build
-cmake .. -DCMAKE_C_COMPILER=gcc-5 -DCMAKE_CXX_COMPILER=g++-5
+cmake ..
 make
 
 #Create directories for miner binaries
@@ -117,7 +117,7 @@ cd /spelunker/xmrig
 sed -i "s/proxy.fee.xmrig.com:9999/europe.cryptonight-hub.miningpoolhub.com:17024/g" config.json
 sed -i "s/YOUR_WALLET/DwarfSun.Donation/g" config.json
 sed -i 's/"threads": null/"threads": 1/g' config.json
-sed -i 's/"donate-level": 5/"donate-level": 1' config.json
+sed -i 's/"donate-level": 5/"donate-level": 1/g' config.json
 sed -i 's/"background": false/"background": true/g' config.json
 
 #xmrig-nvidia
@@ -134,7 +134,7 @@ cp /spelunker/source/miners/ewbf/* /spelunker/ewbf
 
 #start spelunking in screen session
 cd /spelunker
-screen -dmS spelunker ./spelunk.sh
+screen -dmS spelunker dotnet spelunker.dll $usr $rig
 
 echo "Would you like spelunker to start after a reboot? [y/n]"
 read answer
