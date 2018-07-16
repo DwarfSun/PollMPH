@@ -86,7 +86,7 @@ mkdir -p /spelunker/source/ccminer
 cd /spelunker/source/ccminer
 ./build.sh
 
-#Build xmr-stak
+#Build xmrig-nvidia
 mkdir -p /spelunker/source/xmrig-nvidia/build
 cd /spelunker/source/xmrig-nvidia/build
 cmake .. -DCMAKE_C_COMPILER=gcc-5 -DCMAKE_CXX_COMPILER=g++-5
