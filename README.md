@@ -8,7 +8,7 @@ Where possible, Spelunker has made use of open source miners, noteably xmrig-nvi
 # Build / Install
 Spelunker comes with an install.sh file which, when executed, will attempt to download and install all dependencies. Simply running it should place all the miners in a folder named spelunker at /, as well as configure the miners to use the username and rig ID you specify.
 
-The following command, typed in terminal, should be all that is needed:
+The following command, typed in terminal, should be all that is needed: <br />
   sudo apt-get install git;git clone https://github.com/DwarfSun/Spelunker.git; cd spelunker;sudo ./install.sh
  
 # Launching Spelunker
