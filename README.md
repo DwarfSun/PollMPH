@@ -12,10 +12,10 @@ The following command, typed in terminal, should be all that is needed: <br />
   sudo apt-get install git;git clone https://github.com/DwarfSun/Spelunker.git; cd spelunker;sudo ./install.sh
  
 # Launching Spelunker
-If launched by the crontab during a reboot, Spelunker can be viewed by typing the following in the terminal
+If launched by the crontab during a reboot, Spelunker can be viewed by typing the following in the terminal: <br />
  sudo screen -r spelunker
   
-To launch Spelunker manually, simply type the following in the terminal
+To launch Spelunker manually, simply type the following in the terminal: <br />
   sudo /spelunker/spelunk.sh
   
 # Installing .NET Core 2.1 SDK
