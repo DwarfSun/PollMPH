@@ -150,10 +150,12 @@ then
     elif grep -q "@reboot" "./crontab.txt"
     then
         echo "Warning: crontab already contains a process which is launched on reboot. You will need to configure crontab manually." 1>&2
+	sleep 20
         crontab -e
     else
         echo "@reboot screen -dmS spelunker /spelunker/spelunk.sh" >> crontab.txt
         crontab crontab.txt
+	echo "@reboot launch added to crontab for root"
     fi
 fi
 echo "Installation complete, launching screen session." 1>&2
