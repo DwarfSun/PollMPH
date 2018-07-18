@@ -184,7 +184,7 @@ namespace spelunker
           {
             if (process != null)
             {
-              System.Console.WriteLine("{0} is not the most profitable coin, with a normalised profit rating of {1}", topCoin.coinName, topCoin.normalizedProfitNvidia);
+              System.Console.WriteLine("{0} is not the most profitable coin.");//, with a normalised profit rating of {1}", topCoin.coinName, topCoin.normalizedProfitNvidia);
               process.Kill();
             }
           }
@@ -219,7 +219,15 @@ namespace spelunker
         try
         {
           topCoin = coins[0];
-          System.Console.WriteLine("Mining {0}, with a normalised profit rating of {1}", topCoin.coinName, topCoin.normalizedProfitNvidia);
+          if (process.HasExited)
+          {
+            System.Console.WriteLine("{0} miner appears to have exited, attempting to restart", topCoin.coinName, topCoin.normalizedProfitNvidia);
+            process.Start();
+          }
+          else
+          {
+            System.Console.WriteLine("Mining {0}, with a normalised profit rating of {1}", topCoin.coinName, topCoin.normalizedProfitNvidia);
+          }
         }
         catch { }
         System.Threading.Thread.Sleep(60000);
