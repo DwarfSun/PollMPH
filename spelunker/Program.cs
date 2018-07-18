@@ -184,7 +184,7 @@ namespace spelunker
           {
             if (process != null)
             {
-              System.Console.WriteLine("{0} is not the most profitable coin.");//, with a normalised profit rating of {1}", topCoin.coinName, topCoin.normalizedProfitNvidia);
+              System.Console.WriteLine("{0} is not the most profitable coin.", topCoin.coinName);//, with a normalised profit rating of {1}", topCoin.coinName, topCoin.normalizedProfitNvidia);
               process.Kill();
             }
           }
